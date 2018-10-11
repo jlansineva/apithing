@@ -14,7 +14,8 @@
       ))
 
 (defn describe [parameters]
-  (state/update-descriptions ))
+  (when (not (nil? (validate parameters)))
+    (state/update-descriptions parameters)))
 
 (defn -main
   "I don't do a whole lot ... yet."

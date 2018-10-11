@@ -24,7 +24,7 @@
         (validate invalid-api-description) => nil))
     (facts "About describe"
       (fact "An api description item is created for new entries"
-        (describe {:basepath "localhost" :api "event" :tests [:xss :inject]}) => (contains {:result :success})))
+        (describe {:basepath "localhost" :api "event" :tests [:xss :inject] :methods [:get :post]}) => (contains {:result :success})))
     (future-fact "API description is stored")
     (future-fact "API description is can be read")
     (future-fact "API description loaded from .edn file"))
